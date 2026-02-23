@@ -8,7 +8,16 @@ services:
       POSTGRES_PASSWORD: example
     networks:
       - mynetwork
-  
+  front:
+    build: ./frontend
+    networks:
+      -mynetwork 
+  back:
+    build: ./backend
+    networks:
+     -mynetwork
+
+
 
 networks:
   -mynetwork:
